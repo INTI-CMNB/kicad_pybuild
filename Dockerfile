@@ -1,4 +1,4 @@
-FROM debian:10.4-slim
+FROM debian:bullseye-slim
 MAINTAINER Salvador E. Tropea <set@ieee.org>
 LABEL Description="Minimal environment to make Python Debian packages"
 
@@ -14,8 +14,8 @@ RUN apt-get -y update && \
 	rm -rf /var/lib/apt/lists/*
 
 # Fake pcbnew, just to avoid errors
-RUN mkdir /usr/lib/python3/dist-packages/pcbnew && \
-	touch /usr/lib/python3/dist-packages/pcbnew/__init__.py
+RUN mkdir /usr/lib/python3/dist-packages/pcbnew
+COPY pcbnew.py /usr/lib/python3/dist-packages/pcbnew/__init__.py
 
 # Fake yaml, just to avoid errors
 RUN mkdir /usr/lib/python3/dist-packages/yaml && \
