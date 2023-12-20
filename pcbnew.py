@@ -6,6 +6,7 @@ def LoadBoard(file):
 
 PLOT_CONTROLLER = 0
 PLOT_FORMAT_PDF = 0
+PLOT_FORMAT_SVG = 0
 Edge_Cuts = 0
 
 def FromMM(val):
